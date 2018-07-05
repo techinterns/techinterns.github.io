@@ -118,3 +118,12 @@ span.psw {
        width: 100%;
     }
 }
+header
+{
+	background-color: #ffffff;
+	background-position: center top;
+}
+footer
+{
+	text-align: left;
+}

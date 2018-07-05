@@ -127,3 +127,12 @@ footer
 {
 	text-align: left;
 }
+
+.image-area
+{
+	width: 480px;
+	height: 300px;
+	overflow: hidden;
+	margin: auto;
+	position: relative;
+}

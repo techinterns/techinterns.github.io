@@ -61,6 +61,16 @@
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
+	    
+      <label for="firstName"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="firstName" required>
+
+      <label for="lastName"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lastName" required>
+	    
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>    
+	    
       <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
 		
@@ -69,12 +79,6 @@
 
       <label for="confirmPassword"><b>Confirm Password</b></label>
       <input type="password" placeholder="Re-enter Password" name="confirmPassword" required> 
-		
-      <label for="firstName"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="firstName" required>
-
-      <label for="lastName"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="lastName" required>
 
       <label for="gender"><b>Gender</b></label>
       <select>
@@ -83,9 +87,6 @@
 	<option value="preferNotToAnswer">Prefer not to answer</option>
       </select>
       <br> <br>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>    
 
       <label for="contactNumber"><b>Contact Number</b></label>
       <input type="text" placeholder="Enter Contact Number" name="contactNumber" required>
@@ -123,8 +124,35 @@
 	<option value="both">Both</option>
       </select>
       <br> <br>
+	<label for="signUpAs"><b>Sign-up as*</b></label>
+      <br>
+	  <input type="radio" name="type" onclick="driverFunction()"> Driver<br>
+      <input type="radio" name="type" onclick="riderFunction()"> Rider<br> 
 
+	<p style="color:rgb(234,0,0)"><b>**Following details are to be filled only when you sign-up as a driver</b></p>
+      
+        <label for="numberOfSeats"><b>Number of Seats</b></label>
+        <input type="text" placeholder="Enter Number of Seats" name="numberOfSeats" id="numberOfSeats">
+        <br> <br>
 
+        <label for="mpg"><b>MPG</b></label>
+        <input type="text" placeholder="Enter MPG" name="mpg" id="mpg">
+        <br> <br>
+
+        <label for="manufacturer"><b>Car Manufacturer Name</b></label>
+        <input type="text" placeholder="Enter Manufacturer Name" name="manufacturer" id="manufacturer">
+        <br> <br>
+
+        <label for="model"><b>Car Model</b></label>
+        <input type="text" placeholder="Enter Car Model" name="Model" id="model">
+        <br> <br>
+
+        <label for="number"><b>Car Number</b></label>
+        <input type="text" placeholder="Enter Car Number" name="number" id="number">
+        <br> <br>
+      <p style="color:tomato">* marked are required fields, make sure you fill them all before clicking Sign-up button</p>
+	    
+	    
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
@@ -157,6 +185,23 @@ window.onclick = function(event) {
         modal2.style.display = "none";
     }
 }
+
+//Display driver details information
+var type = document.getElementById
+        function driverFunction() {
+            document.getElementById("numberOfSeats").disabled = false;
+            document.getElementById("mpg").disabled = false;
+            document.getElementById("manufacturer").disabled = false;
+            document.getElementById("model").disabled = false;
+            document.getElementById("number").disabled = false;            
+        }
+        function riderFunction() {
+            document.getElementById("numberOfSeats").disabled = true;
+            document.getElementById("mpg").disabled = true;
+            document.getElementById("manufacturer").disabled = true;
+            document.getElementById("model").disabled = true;
+            document.getElementById("number").disabled = true;
+        }  
 </script>
 	
 	<footer>

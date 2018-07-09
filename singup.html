@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <form>
+    <div>
+      <h1>Buddy System Sign-Up</h1>
+      
+      <label for="firstName"><b>First Name*</b></label>
+      <input type="text" placeholder="Enter First name" name="firstName" required>
+      <br> <br>
+
+      <label for="lastName"><b>Last Name*</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lastName" required>
+      <br> <br>
+
+      <label for="gender"><b>Gender*</b></label>
+      <select required>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="preferNotToAnswer">Prefer not to answer</option>
+      </select>
+      <br> <br>
+
+      <label for="email"><b>Email ID*</b></label>
+      <input type="text" placeholder="Enter Email ID" name="email" required>
+      <br> <br>
+
+      <label for="password"><b>Password*</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      <br> <br>
+
+      <label for="confirmPassword"><b>Confirm Password*</b></label>
+      <input type="password" placeholder="Re-enter Password" name="confirmPassword" required>     
+      <br> <br>
+
+      <label for="contactNumber"><b>Contact Number*</b></label>
+      <input type="text" placeholder="Enter Contact Number" name="contactNumber" required>
+      <br> <br>
+
+      <label for="street"><b>Street Name*</b></label>
+      <input type="text" placeholder="Enter Street Name" name="street" required>
+      <br> <br>
+
+      <label for="city"><b>City Name*</b></label>
+      <input type="text" placeholder="Enter City Name" name="city" required>
+      <br> <br>
+
+      <label for="state"><b>State Name*</b></label>
+      <input type="text" placeholder="Enter State Name" name="state" required>
+      <br> <br>
+
+      <label for="zip"><b>ZIP Code*</b></label>
+      <input type="text" placeholder="Enter Zip Code" name="zip" required>
+      <br> <br>
+
+      <label for="work"><b>Work Location*</b></label>
+      <select required>
+        <option value="ballDrive"> Ball Drive</option>
+        <option value="riderTrial"> Rider Trail</option>
+        <option value="westPortPlace"> West Port Place</option>
+      </select>
+      <br> <br>
+
+      <label for="genderPrefered"><b>Gender Prefered*</b></label>
+      <select required>
+	<option value="both">Both</option>
+	<option value="female">Female</option>
+  	<option value="male">Male</option>
+      </select>
+      <br> <br>
+
+      <label for="signUpAs"><b>Sign-up as*</b></label>
+      <br>
+	  <input type="radio" name="type" onclick="driverFunction()"> Driver<br>
+      <input type="radio" name="type" onclick="riderFunction()"> Rider<br>    
+          
+      <p style="color:rgb(234,0,0)"><b>**Following details are to be filled only when you sign-up as a driver</b></p>
+      
+        <label for="numberOfSeats"><b>Number of Seats</b></label>
+        <input type="text" placeholder="Enter Number of Seats" name="numberOfSeats" id="numberOfSeats">
+        <br> <br>
+
+        <label for="mpg"><b>MPG</b></label>
+        <input type="text" placeholder="Enter MPG" name="mpg" id="mpg">
+        <br> <br>
+
+        <label for="manufacturer"><b>Car Manufacturer Name</b></label>
+        <input type="text" placeholder="Enter Manufacturer Name" name="manufacturer" id="manufacturer">
+        <br> <br>
+
+        <label for="model"><b>Car Model</b></label>
+        <input type="text" placeholder="Enter Car Model" name="Model" id="model">
+        <br> <br>
+
+        <label for="number"><b>Car Number</b></label>
+        <input type="text" placeholder="Enter Car Number" name="number" id="number">
+        <br> <br>
+      <p style="color:tomato">* marked are required fields, make sure you fill them all before clicking Sign-up button</p>
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div>
+        <button type="button">Cancel</button>
+        <button type="submit">Sign-up</button>
+      </div>
+      
+      <script>
+      var type = document.getElementById
+        function driverFunction() {
+            document.getElementById("numberOfSeats").disabled = false;
+            document.getElementById("mpg").disabled = false;
+            document.getElementById("manufacturer").disabled = false;
+            document.getElementById("model").disabled = false;
+            document.getElementById("number").disabled = false;            
+        }
+        function riderFunction() {
+            document.getElementById("numberOfSeats").disabled = true;
+            document.getElementById("mpg").disabled = true;
+            document.getElementById("manufacturer").disabled = true;
+            document.getElementById("model").disabled = true;
+            document.getElementById("number").disabled = true;
+        }        
+      </script>
+
+    </div>
+  </form>
+
+</body>
+</html>

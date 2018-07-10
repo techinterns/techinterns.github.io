@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <form>
+    <div>
+      <h1>Enter your details and become a buddy</h1>
+      
+      <label for="firstName"><b>First Name*</b></label>
+      <input type="text" name="firstName" required>
+      <br> <br>
+
+      <label for="lastName"><b>Last Name*</b></label>
+      <input type="text" name="lastName" required>
+      <br> <br>
+
+      <label for="gender"><b>Gender*</b></label>
+      <select required>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="preferNotToAnswer">Prefer not to answer</option>
+      </select>
+      <br> <br>
+
+      <label for="email"><b>Email*</b></label>
+      <input type="text" placeholder="Enter your work Email" name="email" required>
+      <br> <br>
+
+      <label for="password"><b>Password*</b></label>
+      <input type="password" name="password" required>
+      <br> <br>
+
+      <label for="confirmPassword"><b>Confirm Password*</b></label>
+      <input type="password" name="confirmPassword" required>     
+      <br> <br>
+
+      <label for="contactNumber"><b>Contact Number*</b></label>
+      <input type="text" name="contactNumber" required>
+      <br> <br>
+
+	  <fieldset>
+	  <legend><b>Enter your home address details</b></legend>
+      <label for="street"><b>Street*</b></label>
+      <input type="text" name="street" required>
+      <br> <br>
+
+      <label for="city"><b>City*</b></label>
+      <input type="text" name="city" required>
+      <br> <br>
+
+      <label for="state"><b>State*</b></label>
+      <input type="text" name="state" required>
+      <br> <br>
+
+      <label for="zip"><b>ZIP Code*</b></label>
+      <input type="text" name="zip" required>
+      </fieldset>
+      <br>
+
+      <label for="work"><b>Work Location*</b></label>
+      <select required>
+        <option value="ballDrive"> Ball Drive</option>
+        <option value="riderTrial"> Rider Trail</option>
+        <option value="westPortPlace"> West Port Place</option>
+      </select>
+      <br> <br>
+
+      <label for="genderPrefered"><b>Gender you would prefer to travel with*</b></label>
+      <select required>
+		<option value="both">Both</option>
+		<option value="female">Female</option>
+  		<option value="male">Male</option>
+      </select>
+      <br> <br>
+
+      <label for="signUpAs"><b>Sign-up as*</b></label>
+      <br>
+	  <input type="radio" name="type" onclick="driverFunction()"> Driver<br>
+      <input type="radio" name="type" onclick="riderFunction()"> Rider<br>
+      <br>
+       
+      <fieldset>
+	  <legend><b>Details to be filled when you sign-up as a driver</b></legend>      
+        <label for="numberOfSeats"><b>Number of Seats</b></label>
+        <input type="text" name="numberOfSeats" id="numberOfSeats">
+        <br> <br>
+
+        <label for="mpg"><b>MPG</b></label>
+        <input type="text" name="mpg" id="mpg">
+        <br> <br>
+
+        <label for="manufacturer"><b>Manufacturer Name</b></label>
+        <input type="text" name="manufacturer" id="manufacturer">
+        <br> <br>
+
+        <label for="model"><b>Model</b></label>
+        <input type="text" name="Model" id="model">
+        <br> <br>
+
+        <label for="number"><b>License Plate Number</b></label>
+        <input type="text" name="number" id="number">
+        <br> <br>
+        </fieldset>
+      <p style="color:tomato">* marked are required fields, make sure you fill them all before clicking Sign-up button</p>
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div>
+        <button type="button">Cancel</button>
+        <button type="submit">Become a Buddy</button>
+      </div>
+      
+      <script>
+      var type = document.getElementById
+        function driverFunction() {
+            document.getElementById("numberOfSeats").disabled = false;
+            document.getElementById("mpg").disabled = false;
+            document.getElementById("manufacturer").disabled = false;
+            document.getElementById("model").disabled = false;
+            document.getElementById("number").disabled = false;            
+        }
+        function riderFunction() {
+            document.getElementById("numberOfSeats").disabled = true;
+            document.getElementById("mpg").disabled = true;
+            document.getElementById("manufacturer").disabled = true;
+            document.getElementById("model").disabled = true;
+            document.getElementById("number").disabled = true;
+        }        
+      </script>
+
+    </div>
+  </form>
+
+</body>
+</html>

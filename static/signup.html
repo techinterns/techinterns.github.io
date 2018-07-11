@@ -3,7 +3,7 @@
 
 <body>
 
-  <form>
+  <form id="signUp">
     <div>
       <h1>Enter your details and become a buddy</h1>
       
@@ -24,7 +24,7 @@
       <br> <br>
 
       <label for="email"><b>Email*</b></label>
-      <input type="text" placeholder="Enter your work Email" name="email" required>
+      <input type="email" pattern=".+@equifax.com" placeholder="first.last@equifax.com" name="email" required>
       <br> <br>
 
       <label for="password"><b>Password*</b></label>
@@ -106,7 +106,7 @@
       <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
       <div>
-        <button type="button">Cancel</button>
+        <button type="button" onclick="clearAll()">Cancel</button>
         <button type="submit">Become a Buddy</button>
       </div>
       
@@ -125,7 +125,11 @@
             document.getElementById("manufacturer").disabled = true;
             document.getElementById("model").disabled = true;
             document.getElementById("number").disabled = true;
-        }        
+        }     
+        function clearAll(){
+        	document.getElementById('signUp').reset();
+         	driverFunction();    
+        }
       </script>
 
     </div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		var type = document.getElementById
+		function riderCarVisibility() {
+			document.getElementById("carInfo").style.visibility='hidden';
+		}
+		function driverCarVisibility() {
+			document.getElementById("carInfo").style.visibility='visible';
+		}
+		
+	</script>
+	
+	<body onload="riderCarVisibility()">
+	<form>
+		<h3>What would you like to do today?</h3>
+		<button type="button" onClick="riderCarVisibility()">Rider</button>
+		<button type="button" onclick="driverCarVisibility()">Driver</button>
+		<!-- Enter check to check database for entered car information. If no information is entered, have information appear prompting to enter car info. -->
+		
+		<fieldset id="carInfo">
+			<legend><b>You haven't entered your car information!</b></legend>      
+			<label for="numberOfSeats"><b>Number of Seats</b></label>
+			<input type="text" name="numberOfSeats" id="numberOfSeats">
+			<br> <br>
+
+			<label for="mpg"><b>MPG</b></label>
+			<input type="text" name="mpg" id="mpg">
+			<br> <br>
+
+			<label for="manufacturer"><b>Manufacturer Name</b></label>
+			<input type="text" name="manufacturer" id="manufacturer">
+			<br> <br>
+
+			<label for="model"><b>Model</b></label>
+			<input type="text" name="Model" id="model">
+			<br> <br>
+
+			<label for="number"><b>License Plate Number</b></label>
+			<input type="text" name="number" id="number">
+			<br> <br>
+			
+			<button type="button">Cancel</button>
+			<button type="button">Submit</button>
+        </fieldset>
+	</form>
+		
+		
+	</body>
+</html>

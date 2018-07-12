@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Account Settings - The Buddy System</title>
+	<style type="text/css" media="screen">
+	@import url(project.css);
+	</style>
+</head>
+<body class="homePage">
+	<header>
+		<div class= "intro">
+			<h1> The Buddy System </h1>
+			<h4> An Internal Carpool Application</h4>
+		</div>
+	</header>
+  <form>
+    <div>
+      <h3>Account Settings</h3>
+	  <h4>Welcome email@equifax.com!</h4>
+
+      <label for="firstName"><b>First Name</b></label>
+      <input type="text" name="firstName" placeholder = "John">
+      <br> <br>
+
+      <label for="lastName"><b>Last Name</b></label>
+      <input type="text" name="lastName" placeholder = "Doe">
+      <br> <br>
+
+      <label for="gender"><b>Gender</b></label>
+      <select>
+		<option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="preferNotToAnswer">Prefer not to answer</option>
+      </select>
+      <br> <br>
+	  
+	  <label for="work"><b>Work Location</b></label>
+      <select>
+        <option value="ballDrive"> Ball Drive</option>
+        <option value="riderTrial"> Rider Trail</option>
+        <option value="westPortPlace"> West Port Place</option>
+      </select>
+      <br> <br>
+
+      <label for="genderPrefered"><b>Gender you would prefer to travel with</b></label>
+      <select required>
+		<option value="both">Both</option>
+		<option value="female">Female</option>
+  		<option value="male">Male</option>
+      </select>
+      <br> <br>
+	  
+	  <label for="contactNumber"><b>Contact Number</b></label>
+      <input type="text" name="contactNumber" placeholder = "000-000-0000">
+      <br> <br>
+
+	  <fieldset>
+	  <legend><b>Home Address Details</b></legend>
+      <label for="street"><b>Street</b></label>
+      <input type="text" name="street">
+      <br> <br>
+
+      <label for="city"><b>City</b></label>
+      <input type="text" name="city">
+      <br> <br>
+
+      <label for="state"><b>State</b></label>
+      <input type="text" name="state">
+      <br> <br>
+
+      <label for="zip"><b>ZIP Code</b></label>
+      <input type="text" name="zip">
+      </fieldset>
+      <br>
+       
+	  <!-- Only display the information if the person is driver -->
+      <fieldset>
+	  <legend><b>Driver - Car Information</b></legend>      
+        <label for="numberOfSeats"><b>Number of Seats</b></label>
+        <input type="text" name="numberOfSeats" id="numberOfSeats">
+        <br> <br>
+
+        <label for="mpg"><b>MPG</b></label>
+        <input type="text" name="mpg" id="mpg">
+        <br> <br>
+
+        <label for="manufacturer"><b>Manufacturer Name</b></label>
+        <input type="text" name="manufacturer" id="manufacturer">
+        <br> <br>
+
+        <label for="model"><b>Model</b></label>
+        <input type="text" name="Model" id="model">
+        <br> <br>
+
+        <label for="number"><b>License Plate Number</b></label>
+        <input type="text" name="number" id="number">
+        <br> <br>
+        </fieldset>
+      <p>Change Password? <a href="\resetpassword.html" style="color:dodgerblue">Click here!</a>.</p> 
+      <button type="submit">Update Profile</button>
+    </div>
+  </form>
+</body>
+</html>

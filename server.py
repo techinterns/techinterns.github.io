@@ -16,6 +16,6 @@ class User(db.Model):
 def index():
     return app.send_static_file('index.html')
 
-@app.route('/login')
-def login_page():
-    return app.send_static_file('signup.html')
+@app.route('/resetpassword')
+def reset_pass():
+    return app.send_static_file('resetpassword.html')

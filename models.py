@@ -19,11 +19,14 @@ class User(db.Model):
 
     signup_status = db.Column(db.String(20), index=True)
 
+    cars = db.relationship('Car', backref='owner', lazy='dynamic')
+    status = db.relationship('Daily_status', backref='employee', uselist=False, lazy='dynamic')
+
     def __repr__(self):
         return 'User {}'.format(self.email)
 
 class Car(db.Model):
-    email = db.Column(db.String(120), unique=True, primary_key=True)
+    email = db.Column(db.String(120), db.ForeignKey('user.email'), unique=True, primary_key=True)
     num_seats = db.Column(db.Integer, index=True)
     mpg = db.Column(db.Float())
     manufacturer = db.Column(db.String(60))
@@ -34,7 +37,7 @@ class Car(db.Model):
         return 'Car {}'.format(self.email)
 
 class Daily_status(db.Model):
-    email = db.Column(db.String(120), unique=True, primary_key=True)
+    email = db.Column(db.String(120), db.ForeignKey('user.email'), unique=True, primary_key=True)
     status = db.Column(db.String(20), index=True, nullable=False)
 
     def __repr__(self):

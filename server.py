@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -8,8 +8,16 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return redirect(url_for('login'))
 
-@app.route('/resetpassword')
+@app.route('/login')
+def login():
+    return app.send_static_file('login.html')
+
+@app.route('/register')
+def register():
+    return app.send_static_file('register.html')
+
+@app.route('/forgot')
 def reset_pass():
-    return app.send_static_file('resetpassword.html')
+    return app.send_static_file('reset.html')

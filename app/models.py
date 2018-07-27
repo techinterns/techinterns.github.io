@@ -1,4 +1,4 @@
-from server import db
+from app import db
 
 class User(db.Model):
     first_name = db.Column(db.String(120), nullable=False)
@@ -20,7 +20,7 @@ class User(db.Model):
     signup_status = db.Column(db.String(20), index=True)
 
     cars = db.relationship('Car', backref='owner', lazy='dynamic')
-    status = db.relationship('Daily_status', backref='employee', uselist=False, lazy='dynamic')
+    status = db.relationship('Daily_status', backref='employee', lazy='dynamic')
 
     def __repr__(self):
         return 'User {}'.format(self.email)

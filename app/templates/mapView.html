@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Tech Interns">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>The Buddy System</title>
+	<link rel="stylesheet" type="text/css" href="css/mapStyles.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>Google Maps Test</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-5">
+				<div class="card card-body bg-light">
+					<table class="table-borderless table-hover">
+						<tbody>
+							{% for user in users %}
+							<TR>
+								<td>
+									{{ user.first_name}} {{ user.last_name }}
+								</td>
+								<td>
+									{{user.home_address}}<br>{{user.home_city}}, {{user.home_state}}
+								</td>
+							</TR>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col">
+				<div id="googleMap"></div> <!--These map styles are located in css/mapStyles.css-->	
+			</div>
+		</div>
+		
+	</div>
+	
+	<script>
+		function mapTest() {
+			var mapProperties= {
+				center:new google.maps.LatLng(38.697077, -90.41952),
+				zoom:10,
+			};
+			var map=new google.maps.Map(document.getElementById("googleMap"),mapProperties);
+			
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(38.697077, -90.41952),
+				map: map,
+				title: "Your location"
+			});
+		}
+	</script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ3WUthizaU1Q2qiThWJ2tBGgiAxLG6qY&callback=mapTest"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

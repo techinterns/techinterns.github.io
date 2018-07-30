@@ -1,7 +1,7 @@
 from flask import redirect, url_for, render_template
 from app import app, db
 from app.models import User
-from app.forms import LoginForm
+from app.forms import LoginForm, RegisterForm
 
 @app.route('/')
 def index():
@@ -16,7 +16,10 @@ def login():
 
 @app.route('/register')
 def register():
-    return app.send_static_file('register.html')
+    form = RegisterForm()
+    if form.validate_on_submit():
+        return redirect(url_for('login'))
+    return render_template('register.html', form=form)
 
 @app.route('/forgot')
 def reset_pass():

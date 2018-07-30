@@ -23,7 +23,7 @@ class User(db.Model):
     status = db.relationship('Daily_status', backref='employee', lazy='dynamic')
 
     def __repr__(self):
-        return 'User {}'.format(self.email)
+        return 'User {} {}'.format(self.first_name, self.last_name)
 
 class Car(db.Model):
     email = db.Column(db.String(120), db.ForeignKey('user.email'), unique=True, primary_key=True)

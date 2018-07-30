@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Tech Interns">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>The Buddy System - Login</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/avatar.png">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title" align="center">The Buddy System</h4>
+							<form action="" method="POST" novalidate>
+								
+								<div class="form-group">
+									{% for error in form.email.errors %}
+									<div class="alert alert-danger">[{{error}}]</div>
+									{% endfor %}
+									{{form.email.label}}<br>
+									{{form.email(class="form-control", autofocus=true)}}
+									
+									<!-- <input id="email" type="email" class="form-control" name="email" value="" required autofocus> -->
+								</div>
+								
+								<div class="form-group">
+									{% for error in form.password.errors %}
+									<div class="alert alert-danger">[{{error}}]</div>
+									{% endfor %}
+									<!-- This is so both the label and the link will be at the same height -->
+									<div class="row">
+										<div class="col-6">{{form.password.label}}</div>
+										<div class="col-6">
+											<a href="/forgot" class="float-right">
+												Forgot Password?
+											</a>
+										</div>
+									</div>
+									{{form.password(class="form-control", id="password", **{'data-eye':'true'})}}
+									<!-- <input id="password" type="password" class="form-control" name="password" required data-eye> -->
+								</div>
+								<div class="form-group no-margin">
+									<!-- <button type="submit" class="btn btn-primary btn-block">
+										Login
+									</button> -->
+									{{form.submit(class="btn btn-primary btn-block")}}
+								</div>
+								<div class="margin-top20 text-center" id="register" style="color: white">
+									Don't have an account? <a href="/register">Create One</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2018 Tech Interns
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>

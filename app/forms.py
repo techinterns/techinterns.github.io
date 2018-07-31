@@ -29,7 +29,7 @@ class RegisterForm(FlaskForm):
         validators=[DataRequired()]
     )
     number_of_seats = IntegerField('Miles per Gallon')
-    manufacturuer = StringField('Manufacturer')
+    manufacturer = StringField('Manufacturer')
     model = StringField('Model')
     plate_number = StringField('License Plate Number')
     submit = SubmitField('Register')

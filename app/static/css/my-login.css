@@ -60,6 +60,7 @@ body.my-login-page {
 
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
+	cursor: pointer;
 }	
 
 .my-login-page .margin-top20 {

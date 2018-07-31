@@ -19,111 +19,146 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Sign up</h4>
-							<form method="POST">
+							<form action="" method="POST">
 							 
 								<div class="form-group">
-									<label for="firstName">First Name</label>
-									<input id="name" type="text" class="form-control" name="firstName" required autofocus>
+									<!-- <label for="firstName">First Name</label>
+									<input id="name" type="text" class="form-control" name="firstName" required autofocus> -->
+									{{ form.firstName.label}}
+									{{ form.firstName(class="form-control", autofocus=true)}}
 								</div>
 
 								<div class="form-group">
-									<label for="lastName">Last Name</label>
-									<input id="name" type="text" class="form-control" name="lastName" required autofocus>
+									<!-- <label for="lastName">Last Name</label>
+									<input id="name" type="text" class="form-control" name="lastName" required autofocus> -->
+									{{ form.lastName.label}}
+									{{ form.lastName(class="form-control", autofocus=true)}}
 								</div>
 
 								<div class="form-group">
-									<label for="email">Work E-mail Address</label>
-									<input id="email" type="email" class="form-control" name="email" required>
+									<!-- <label for="email">Work E-mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" required> -->
+									{{ form.email.label}}
+									{{ form.email(class="form-control")}}
 								</div>
 
 								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<!-- <label for="password">Password</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye> -->
+									{{ form.password.label }}
+									{{ form.password(class="form-control", id="password", **{'data-eye':'true'}) }}
 								</div>
 
 								<div class="form-group">
-									<label for="confirmPassword">Confirm Password</label>
-									<input id="confirmPassword" type="password" class="form-control" name="confirmPassword" required data-eye>
+									<!-- <label for="confirmPassword">Confirm Password</label>
+									<input id="confirmPassword" type="password" class="form-control" name="confirmPassword" required data-eye> -->
+									{{ form.confirmPassword.label }}
+									{{ form.confirmPassword(class="form-control", **{'data-eye':'true'}) }}
 								</div>
 
 								<div class="form-group">
-									<label for="contactNumber">Contact Number</label>
-									<input id="contactNumber" type="tel" class="form-control" name="contactNumber" required autofocus>
+									<!-- <label for="contactNumber">Contact Number</label>
+									<input id="contactNumber" type="tel" class="form-control" name="contactNumber" required autofocus> -->
+									{{ form.contactNumber.label}}
+									{{ form.contactNumber(class="form-control")}}
 								</div>
 
 								<div class="form-group">
-									<label for="gender">Gender</label>
+									<!-- <label for="gender">Gender</label>
 									 <select required>
 										<option value="female">Female</option>
 										<option value="male">Male</option>									
-									  </select>
-									  
+									  </select> -->
+									  {{ form.gender.label }}
+									  {{ form.gender(class="form-control")}}
 									</div>
 
 								<div class="form-group">
-									<label for="street">Home Address</label>
-									<input id="street" type="text" class="form-control" name="street" required autofocus>
+									<!-- <label for="street">Home Address</label>
+									<input id="street" type="text" class="form-control" name="street" required autofocus> -->
+									{{ form.street.label}}
+									{{ form.street(class="form-control", autofocus="true")}}
 								</div>
 
 								<div class="form-group">
-									<label for="city">City</label>
-									<input id="city" type="text" class="form-control" name="city" required autofocus>
+									<!-- <label for="city">City</label>
+									<input id="city" type="text" class="form-control" name="city" required autofocus> -->
+									{{ form.city.label}}
+									{{ form.city(class="form-control", autofocus="true")}}
 								</div>
 
 								<div class="form-group">
-									<label for="state">State</label>
-									<input id="state" type="text" class="form-control" name="state" required autofocus>
+									<!-- <label for="state">State</label>
+									<input id="state" type="text" class="form-control" name="state" required autofocus> -->
+									{{ form.state.label}}
+									{{ form.state(class="form-control", autofocus="true")}}
 								</div>
 
 								<div class="form-group">
-									<label for="work">Work Location</label>
+									<!-- <label for="work">Work Location</label>
 									  <select required>
 										<option value="ballDrive">Ball Drive</option>
 										<option value="riderTrail">Rider Trail</option>
 										  <option value="westPortPlace">West Port Place</option>
-									  </select>
-									</div>
+									  </select> -->
+									{{ form.work.label}}
+									{{ form.work(class="form-control")}}
+								</div>
 
 								<div class="form-group">
-								<label for="genderPreferred">Gender you would prefer to travel with</label>
+								<!-- <label for="genderPreferred">Gender you would prefer to travel with</label>
       							<select required>
 									<option value="both">Both</option>
 									<option value="female">Female</option>
   									<option value="male">Male</option>
-	  							</select>
+								  </select> -->
+									{{ form.genderPreferred.label}}
+									{{ form.genderPreferred(class="form-control")}}
 								</div>
 
 								<div class="form-group">
-									<label for="car">Do you have a car?</label>
+									<!-- <label for="car">Do you have a car?</label>
 									  <select required>
 										<option value="no" selected>No</option>
 										<option value="yes" onselect="visible()">Yes</option>									
-									  </select>
-									</div>
+									  </select> -->
+									{{ form.car.label}}
+									{{ form.car(class="form-control", **{"onselect":"this.visible()"}) }}
+								</div>
 									
 								<div class="form-group" id="carDetails">
-									<label for="numberOfSeats">Number of Seats</label>
-									<input id="numberOfSeats" type="text" class="form-control" name="numberOfSeats">
+									<!-- <label for="numberOfSeats">Number of Seats</label>
+									<input id="numberOfSeats" type="text" class="form-control" name="numberOfSeats"> -->
+									{{ form.numberOfSeats.label}}
+									{{ form.numberOfSeats(class="form-control")}}
 								</div>
 
 								<div class="form-group" id="carDetails">
-									<label for="mpg">Miles per Gallon</label>
-									<input id="mpg" type="text" class="form-control" name="mpg">
+									<!-- <label for="mpg">Miles per Gallon</label>
+									<input id="mpg" type="text" class="form-control" name="mpg"> -->
+									{{ form.mpg.label}}
+									{{ form.mpg(class="form-control")}}
 								</div>
 
 								<div class="form-group" id="carDetails">
-									<label for="manufacturer">Car Manufacturer</label>
-									<input id="manufacturer" type="text" class="form-control" name="manufacturer">
+									<!-- <label for="manufacturer">Car Manufacturer</label>
+									<input id="manufacturer" type="text" class="form-control" name="manufacturer"> -->
+									{{ form.manufacturer.label}}
+									{{ form.manufacturer(class="form-control")}}
 								</div>
 
 								<div class="form-group" id="carDetails">
-									<label for="model">Car Model</label>
-									<input id="model" type="text" class="form-control" name="model">
+									<!-- <label for="model">Car Model</label>
+									<input id="model" type="text" class="form-control" name="model"> -->
+									{{ form.model.label}}
+									{{ form.model(class="form-control")}}
 								</div>
 
 								<div class="form-group" id="carDetails">
-									<label for="number">License Plate Number</label>
-									<input id="number" type="text" class="form-control" name="number">
+									<!-- <label for="number">License Plate Number</label>
+									<input id="number" type="text" class="form-control" name="number"> -->
+									{{ form.number.label}}
+									{{ form.number(class="form-control")}}
 								</div>				
 
 								<div class="form-group">
@@ -133,11 +168,12 @@
 								</div>
 
 								<div class="form-group no-margin">
-									<button type="submit" class="btn btn-primary btn-block">
+									<!-- <button type="submit" class="btn btn-primary btn-block">
 										Register
-									</button>
+									</button> -->
+									{{form.submit(class="btn btn-primary btn-block", style="cursor: pointer;")}}
 								</div>
-								<div class="margin-top20 text-center">
+								<div class="margin-top20 text-center" style="color: white;">
 									Already have an account? <a href="/login">Login</a>
 								</div>
 							</form>
@@ -152,7 +188,6 @@
 	</section>
 
 	<script>
-	
 		function visible(){			
 			var x = document.getElementById("carDetails");
 			document.getElementsByClassName("form-group").style.display = "block";
@@ -161,6 +196,7 @@
 	</script>
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/my-login.js"></script>
 </body>

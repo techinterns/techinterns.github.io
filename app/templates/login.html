@@ -20,11 +20,17 @@
 						<div class="card-body">
 							<h4 class="card-title" align="center">The Buddy System</h4>
 							<form action="" method="POST" novalidate>
-								
+								{{ form.hidden_tag() }}
+								{% with messages = get_flashed_messages() %}
+									{% if messages %}
+										{% for message in messages %}
+											<div class="alert alert-danger">
+												{{ message }}
+											</div>
+										{% endfor %}
+									{% endif %}
+								{% endwith %}	
 								<div class="form-group">
-									{% for error in form.email.errors %}
-									<div class="alert alert-danger">[{{error}}]</div>
-									{% endfor %}
 									{{form.email.label}}<br>
 									{{form.email(class="form-control", autofocus=true)}}
 									
@@ -32,9 +38,6 @@
 								</div>
 								
 								<div class="form-group">
-									{% for error in form.password.errors %}
-									<div class="alert alert-danger">[{{error}}]</div>
-									{% endfor %}
 									<!-- This is so both the label and the link will be at the same height -->
 									<div class="row">
 										<div class="col-6">{{form.password.label}}</div>
@@ -51,10 +54,10 @@
 									<!-- <button type="submit" class="btn btn-primary btn-block">
 										Login
 									</button> -->
-									{{form.submit(class="btn btn-primary btn-block")}}
+									{{form.submit(class="btn btn-primary btn-block", style="cursor: pointer")}}
 								</div>
 								<div class="margin-top20 text-center" id="register" style="color: white">
-									Don't have an account? <a href="/register">Create One</a>
+									Don't have an account? <a href="{{ url_for('register') }}">Create One</a>
 								</div>
 							</form>
 						</div>
@@ -68,6 +71,7 @@
 	</section>
 	
 	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/my-login.js"></script>
 </body>

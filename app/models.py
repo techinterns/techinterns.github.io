@@ -1,6 +1,8 @@
-from app import db
+from app import db, login
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     first_name = db.Column(db.String(120), nullable=False)
     last_name = db.Column(db.String(120), nullable=False, index=True)
     gender = db.Column(db.String(20), nullable=False, index=True)
@@ -25,6 +27,12 @@ class User(db.Model):
     def __repr__(self):
         return 'User {} {}'.format(self.first_name, self.last_name)
 
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
 class Car(db.Model):
     email = db.Column(db.String(120), db.ForeignKey('user.email'), unique=True, primary_key=True)
     num_seats = db.Column(db.Integer, index=True)
@@ -42,3 +50,7 @@ class Daily_status(db.Model):
 
     def __repr__(self):
         return '{}: {}'.format(self.email, self.status)
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(id)

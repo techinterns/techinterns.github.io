@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField, IntegerField, DecimalField
-from wtforms.validators import DataRequired, EqualTo, Email, Length
+from wtforms.validators import DataRequired, EqualTo, Email, Length, Optional
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -28,9 +28,9 @@ class RegisterForm(FlaskForm):
         choices=[('no', 'No'), ('yes', 'Yes')],
         validators=[DataRequired()]
     )
-    numberOfSeats = IntegerField('Number of Seats')
-    mpg = DecimalField('Miles per Gallon')
-    manufacturer = StringField('Manufacturer')
-    model = StringField('Model')
-    number = StringField('License Plate Number')
-    submit = SubmitField('Register')
+    numberOfSeats = IntegerField('Number of Seats', validators=[Optional()])
+    mpg = DecimalField('Miles per Gallon', validators=[Optional()])
+    manufacturer = StringField('Manufacturer', validators=[Optional()])
+    model = StringField('Model', validators=[Optional()])
+    number = StringField('License Plate Number', validators=[Optional()])
+    submit = SubmitField('Register', validators=[Optional()])

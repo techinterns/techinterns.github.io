@@ -20,7 +20,8 @@
 						<div class="card-body">
 							<h4 class="card-title">Sign up</h4>
 							<form action="" method="POST">
-							 
+								{{ form.hidden_tag() }}
+
 								<div class="form-group">
 									<!-- <label for="firstName">First Name</label>
 									<input id="name" type="text" class="form-control" name="firstName" required autofocus> -->
@@ -174,7 +175,7 @@
 									{{form.submit(class="btn btn-primary btn-block", style="cursor: pointer;")}}
 								</div>
 								<div class="margin-top20 text-center" style="color: white;">
-									Already have an account? <a href="/login">Login</a>
+									Already have an account? <a href="{{ url_for('login') }}">Login</a>
 								</div>
 							</form>
 						</div>

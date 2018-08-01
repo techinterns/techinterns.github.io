@@ -7,6 +7,7 @@ class User(UserMixin, db.Model):
     last_name = db.Column(db.String(120), nullable=False, index=True)
     gender = db.Column(db.String(20), nullable=False, index=True)
     email = db.Column(db.String(120), unique=True, primary_key=True)
+    contact_number = db.Column(db.String(10))
     password_hash = db.Column(db.String(128))
 
     home_address = db.Column(db.String(120), index=True)
@@ -21,8 +22,8 @@ class User(UserMixin, db.Model):
 
     signup_status = db.Column(db.String(20), index=True)
 
-    cars = db.relationship('Car', backref='owner', lazy='dynamic')
-    status = db.relationship('Daily_status', backref='employee', lazy='dynamic')
+    cars = db.relationship('Car', backref='owner')
+    status = db.relationship('Daily_status', backref='employee')
 
     def __repr__(self):
         return 'User {} {}'.format(self.first_name, self.last_name)

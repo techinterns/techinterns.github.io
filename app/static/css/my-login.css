@@ -1,7 +1,8 @@
 html,body {
 	height: 100%;
 	margin: 0;
-	background: url('../img/traffic.png'); 
+	background: url('../img/traffic.png');
+	background-attachment: fixed; 
 }
 
 #carDetails{
@@ -26,7 +27,6 @@ body.my-login-page {
 
 .my-login-page .brand img {
 	width: 100%;
-	
 }
 
 .my-login-page .card-wrapper {
@@ -55,8 +55,12 @@ body.my-login-page {
 	color: white;
 }
 
-.my-login-page .form-control {
+.my-login-page .form-control{
 	border-width: 2.3px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+	height: fit-content;
 }
 
 .my-login-page .form-group label {

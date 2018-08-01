@@ -34,3 +34,8 @@ class RegisterForm(FlaskForm):
     model = StringField('Model', validators=[Optional()])
     number = StringField('License Plate Number', validators=[Optional()])
     submit = SubmitField('Register', validators=[Optional()])
+
+class EditSettingsForm(RegisterForm):
+    password = PasswordField('Password', validators=[EqualTo('confirmPassword', message='Passwords must match')])
+    confirmPassword = PasswordField('Confirm Password', validators=[Optional()])
+    submit = SubmitField('Save Changes')

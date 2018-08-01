@@ -22,8 +22,8 @@ class User(UserMixin, db.Model):
 
     signup_status = db.Column(db.String(20), index=True)
 
-    cars = db.relationship('Car', backref='owner')
-    status = db.relationship('Daily_status', backref='employee')
+    car = db.relationship('Car', uselist=False, backref='owner')
+    status = db.relationship('Daily_status', uselist=False, backref='employee')
 
     def __repr__(self):
         return 'User {} {}'.format(self.first_name, self.last_name)

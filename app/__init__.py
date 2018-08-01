@@ -6,6 +6,7 @@ from flask_login import LoginManager
 app = Flask(__name__, static_url_path="")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///..\\buddy.db'
 app.config['SECRET_KEY'] = 'proof-of-concept' # This would be more secure if it wasn't a POC
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)

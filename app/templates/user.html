@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Tech Interns">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>The Buddy System - Edit Settings</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/avatar.png">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Edit Settings</h4>
+							<form action="" method="POST" novalidate>
+								{{ form.hidden_tag() }}
+
+								<div class="form-group">
+									{{ form.firstName.label}}
+									{{ form.firstName(class="form-control", autofocus=true)}}
+								</div>
+
+								<div class="form-group">
+									{{ form.lastName.label}}
+									{{ form.lastName(class="form-control", autofocus=true)}}
+								</div>
+
+								<div class="form-group">
+									{{ form.email.label}}
+									{{ form.email(class="form-control")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.password.label }}
+									{{ form.password(class="form-control", id="password", **{'data-eye':'true'}) }}
+								</div>
+
+								<div class="form-group">
+									{{ form.confirmPassword.label }}
+									{{ form.confirmPassword(class="form-control", **{'data-eye':'true'}) }}
+								</div>
+
+								<div class="form-group">
+									{{ form.contactNumber.label}}
+									{{ form.contactNumber(class="form-control")}}
+								</div>
+
+								<div class="form-group">
+									  {{ form.gender.label }}
+									  {{ form.gender(class="form-control")}}
+									</div>
+
+								<div class="form-group">
+									{{ form.street.label}}
+									{{ form.street(class="form-control", autofocus="true")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.city.label}}
+									{{ form.city(class="form-control", autofocus="true")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.state.label}}
+									{{ form.state(class="form-control", autofocus="true")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.work.label}}
+									{{ form.work(class="form-control")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.genderPreferred.label}}
+									{{ form.genderPreferred(class="form-control")}}
+								</div>
+
+								<div class="form-group">
+									{{ form.car.label}}
+									{{ form.car(class="form-control", **{"onchange":"toggleVis()"}) }}
+								</div>
+									
+								<div class="form-group" id="carDetails">
+									{{ form.numberOfSeats.label}}
+									{{ form.numberOfSeats(class="form-control")}}
+								</div>
+
+								<div class="form-group" id="carDetails">
+									{{ form.mpg.label}}
+									{{ form.mpg(class="form-control")}}
+								</div>
+
+								<div class="form-group" id="carDetails">
+									{{ form.manufacturer.label}}
+									{{ form.manufacturer(class="form-control")}}
+								</div>
+
+								<div class="form-group" id="carDetails">
+									{{ form.model.label}}
+									{{ form.model(class="form-control")}}
+								</div>
+
+								<div class="form-group" id="carDetails">
+									{{ form.number.label}}
+									{{ form.number(class="form-control")}}
+								</div>				
+
+								<div class="form-group no-margin">
+									{{form.submit(class="btn btn-primary btn-block", style="cursor: pointer;")}}
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2018 Tech Interns
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		function toggleVis() {
+			const e = document.getElementById('car');
+			const e2 = document.querySelectorAll('#carDetails');
+			// Show
+			if(e.selectedIndex == 1){
+				e2.forEach((el) => {
+				    el.style.display = 'block';
+			    });
+			}
+			// Hide
+			else if(e.selectedIndex == 0){
+                e2.forEach((el) => {
+                    el.style.display = 'none';
+			    });
+            }
+        }
+	</script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>

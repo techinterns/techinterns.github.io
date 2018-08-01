@@ -6,7 +6,7 @@ To run the server follow these steps:
 
 1. install [Python](https://www.python.org/downloads/) if don't have it. 
 2. Open a command prompt/git bash window and run `cntlm -v` if it isn't already running. 
-3. Run `py -m pip install --proxy=127.0.0.1:3128 Flask flask-sqlalchemy flask-wtf flask-login` to download Flask and dependencies. 
+3. Run `py -m pip install --proxy=127.0.0.1:3128 Flask flask-sqlalchemy flask-wtf flask-login flask-migrate` to download Flask and dependencies. 
 4. `cd` into the *techinterns.guthub.io* folder and enter the following commands in Git Bash
  
     `export FLASK_APP=server.py`    

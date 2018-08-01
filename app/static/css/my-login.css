@@ -34,6 +34,12 @@ body.my-login-page {
 	margin: 0 auto;
 }
 
+#googleMap {
+	width: 80%;
+	height: 600px;
+	float: right;
+}
+
 .my-login-page .card {
 	border-color: transparent;
 	box-shadow: 0 0 40px rgba(0,0,0,.05);

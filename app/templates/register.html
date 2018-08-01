@@ -124,7 +124,7 @@
 										<option value="yes" onselect="visible()">Yes</option>									
 									  </select> -->
 									{{ form.car.label}}
-									{{ form.car(class="form-control", **{"onselect":"this.visible()"}) }}
+									{{ form.car(class="form-control", **{"onchange":"toggleVis()"}) }}
 								</div>
 									
 								<div class="form-group" id="carDetails">
@@ -189,11 +189,27 @@
 	</section>
 
 	<script>
-		function visible(){			
-			var x = document.getElementById("carDetails");
-			document.getElementsByClassName("form-group").style.display = "block";
-			x.style.display = "block";
-		}
+		// function visible(){			
+		// 	var x = document.getElementById("carDetails");
+		// 	document.getElementsByClassName("form-group").style.display = "block";
+		// 	x.style.display = "block";
+		// }
+		function toggleVis() {
+			const e = document.getElementById('car');
+			const e2 = document.querySelectorAll('#carDetails');
+			// Show
+			if(e.selectedIndex == 1){
+				e2.forEach((el) => {
+				el.style.display = 'block';
+			});
+			}
+			// Hide
+			else if(e.selectedIndex == 0){
+				e2.forEach((el) => {
+				el.style.display = 'none';
+			});
+    }
+}
 	</script>
 
 	<script src="js/jquery.min.js"></script>

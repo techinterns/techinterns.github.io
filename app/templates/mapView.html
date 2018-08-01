@@ -9,14 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<nav class="navbar navbar-light bg-light">
+	<nav class="navbar">
 		<a href="#" class="navbar-text">Home</a>
 		<span class="navbar-text">
-			{{ current_user.first_name}} {{current_user.last_name}} |
-			<a href="{{ url_for('logout') }}"> Logout</a>
+			<a href="{{ url_for('edit_settings')}}">{{ current_user.first_name}} {{current_user.last_name}}</a> |
+			<a href="{{ url_for('logout') }}"> Log Out</a>
 		</span>
 	</nav>
-	<h1> </h1>
 	<div class="container">
 		<div class="row">
 			<div class="col-5">					
@@ -39,7 +38,9 @@
 				</div>
 			</div>
 			<div class="col">
-				<div id="googleMap"></div> <!--These map styles are located in css/mapStyles.css-->	
+				<div class="card card-light">
+					<div id="googleMap"></div> <!--These map styles are located in css/mapStyles.css-->	
+				</div>
 			</div>
 		</div>
 		

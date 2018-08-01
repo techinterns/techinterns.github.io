@@ -1,12 +1,25 @@
-body{
+html, body {
 	height: 100%;
 	margin: 0;
+	background: url('../img/traffic.png');
+	background-attachment: fixed; 
+}
+
+.navbar {
+	padding: 10px;
+	background-color: #981E32;
+}
+
+.navbar .navbar-text {
+	color: white;
+}
+
+.navbar .navbar-text a {
+	color:white !important;
 }
 
 #googleMap {
-	width: 80%;
-	height: 600px;
+	width: 100%;
+	height: 37.5rem;
 	float: right;
 }
-
-h1{ padding: 20px; }

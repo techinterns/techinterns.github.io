@@ -82,7 +82,7 @@ def reset_pass():
 
 @app.route('/edit_settings', methods=['GET', 'POST'])
 @login_required
-def user():
+def edit_settings():
     form = EditSettingsForm()
     if form.validate_on_submit():
         current_user.first_name = str(form.firstName.data)

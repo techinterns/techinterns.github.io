@@ -6,7 +6,8 @@ html, body {
 }
 
 .navbar {
-	padding: 10px;
+	padding: .625rem;
+	margin-bottom: 3rem;
 	background-color: #981E32;
 }
 

@@ -5,14 +5,12 @@ from app import app, db
 from app.models import User, Car
 from app.forms import LoginForm, RegisterForm, EditSettingsForm
 
-
 @app.route('/')
 @app.route('/index')
 @app.route('/map')
 @login_required
 def map():
     return render_template('mapView.html', users=User.query.all())
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -36,7 +34,6 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('login'))
-
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -74,11 +71,9 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
-
 @app.route('/forgot')
 def reset_pass():
     return render_template('reset.html')
-
 
 @app.route('/edit_settings', methods=['GET', 'POST'])
 @login_required

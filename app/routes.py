@@ -1,4 +1,5 @@
-from flask import redirect, url_for, render_template, flash, request
+import googlemaps, json
+from flask import redirect, url_for, render_template, flash, request, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app import app, db
@@ -28,7 +29,6 @@ def login():
             next_page = url_for('map')
         return redirect(next_page)
     return render_template('login.html', form=form)
-
 
 @app.route('/logout')
 def logout():
@@ -142,3 +142,16 @@ def edit_settings():
             form.number.data = current_user.cars.license_plate_num
 
     return render_template("user.html", form=form)
+
+@app.route('/addresses')
+def addresses():
+    maps = googlemaps.Client(key='AIzaSyAGdyZJS03riT_kwIXBkBlLCsgds2yxcAc')
+    users = User.query.all()
+    addrs = {}
+    for u in users:
+        addr = str(u.home_address) + ' ' + str(u.home_city) + ', '+ str(u.home_state)
+        name = str(u.first_name) + ' ' + str(u.last_name)
+        res = maps.geocode(addr)
+        loc = res[0]['geometry']['location'] #loc dict
+        addrs[name] = loc
+    return json.dumps(addrs)

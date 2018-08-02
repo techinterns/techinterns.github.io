@@ -48,17 +48,39 @@
 	
 	<script>
 		function mapTest() {
-			var mapProperties= {
+			// Set up the map
+			const mapProperties = {
 				center:new google.maps.LatLng(38.697077, -90.41952),
 				zoom:10,
 			};
-			var map=new google.maps.Map(document.getElementById("googleMap"),mapProperties);
+
+			const map = new google.maps.Map(document.getElementById("googleMap"), mapProperties);
 			
-			var marker = new google.maps.Marker({
+			const marker = new google.maps.Marker({
 				position: new google.maps.LatLng(38.697077, -90.41952),
 				map: map,
-				title: "Your location"
+				title: "Westport Place"
 			});
+
+			// Get people's addresses from the server and make them into pins
+			fetch('http://localhost:5000/addresses', {
+				method: 'GET',
+				dataType: 'json'
+			})
+			.then((res) => {
+				return res.json()
+			})
+			.then((json) => {
+				Object.keys(json).forEach((k) => {
+					const lat = json[k]['lat'];
+					const lng = json[k]['lng'];
+					new google.maps.Marker({
+						position: new google.maps.LatLng(lat, lng),
+						map: map,
+						title: k,
+					});
+				});
+			})
 		}
 	</script>
 	

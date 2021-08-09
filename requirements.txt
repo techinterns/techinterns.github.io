@@ -31,7 +31,7 @@ python-dateutil==2.7.3
 python-editor==1.0.3
 pytz==2017.3
 pyvttbl==0.5.2.2
-pywin32==223
+pywin32==301
 requests==2.19.1
 scipy==1.0.1
 six==1.11.0
